@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <title>To Do App</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+
+    <!-- REMOVE MESSAGE BEGIN -->
+
+    <div class="container-lg mb-6">
+      <div style="background-color: rgb(4 0 255 / 6%); padding: 15px; border-radius: 10px; margin-top: 10px;">
+        <div class="row">
+          <div class="col col-12 col-md-2 text-center d-inline">
+            <img src="https://adaptable.io/img/party-popper.svg" style="max-width: 200px;" />
+          </div>
+          <div class="col col-12 col-md-8 text-center">
+            <h2 class="display-3 mt-3">Congratulations!</h2>
+            <p style="font-size: 1.5rem">
+              Your app is now running on
+            </p>
+            <img src="https://adaptable.io/img/color lockup.svg" style="max-width: 200px;" />
+          </div>
+          <div class="col col-md-2 text-center d-none d-md-block">
+            <img src="https://adaptable.io/img/party-popper.svg" style="max-width: 200px;" />
+          </div>
+        </div>
+
+        <h2 class="display-4 text-center mt-5">What's Next?</h2>
+
+        <p class="text-center mb-4">
+          Here are a few ideas on what to do with your new app.
+        </p>
+
+        <div class="row d-flex">
+
+          <div class="col col-12 col-md-6 col-lg-4">
+            <h4 class="fw-bold mb-3">
+              1. Check out your new app
+            </h4>
+            <p>
+              Add tasks to your To Do List <a href="#todo">below</a>.
+              They're saved to your new MongoDB instance via your REST API based
+              on <a href="https://expressjs.com" target="_blank">Express</a> and
+              <a href="https://prisma.io" target="_blank">Prisma</a>.
+            </p>
+          </div>
+
+          <div class="col col-12 col-md-6 col-lg-4">
+            <h4 class="fw-bold mb-3">
+              2. Remove this message
+            </h4>
+            <p>
+              Clone your new repo and edit the app source code to remove this message.
+              Push your changes to GitHub and Adaptable will automatically re-deploy to the cloud.
+            </p>
+          </div>
+
+          <div class="col col-12 col-md-6 col-lg-4">
+            <h4 class="fw-bold mb-3">
+              3. Add more API services
+            </h4>
+            <p>
+              Add more MongoDB-backed REST API endpoints to your app.
+              Take a look at the
+              <a target="_blank" href="https://www.prisma.io/docs/concepts/overview/prisma-in-your-stack/rest">Prisma Documentation</a>
+              to get started.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="row mt-4">
+          <p class="text-center">
+            See the <a href="https://adaptable.io/docs/starters/feathers-chat-starter#what-s-next" target="_blank">Feathers Chat Starter Guide</a> for step-by-step
+            instructions for each.
+          </p>
+          <p class="text-center">
+            <a target="_blank" href="https://adaptable.io/docs/starters/feathers-chat-starter#what-s-next" style="background: #363795; padding: 13px 30px; border-radius: 30px; color: #fff; font-size:18px; text-decoration: none;">Go to the Starter Guide</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- REMOVE MESSAGE END -->
+
+    <h1 class="text-center" id="todo">Express + Prisma + MongoDB</h1>
+    <h2 class="text-center">To Do List</h2>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet" />
+
+    <section style="background-color:rgb(4 0 255 / 6%);">
+      <div class="container-lg p-5">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col col-xl-10">
+
+            <div class="card">
+              <div class="card-body p-5">
+
+                <form class="d-flex justify-content-center align-items-center mb-4" id="todo-form">
+                  <div class="form-outline flex-fill">
+                    <input type="text" id="add-input" class="form-control" />
+                    <label class="form-label" for="add-input">New task...</label>
+                  </div>
+                  <button type="submit" class="btn btn-info ms-2">Add</button>
+                </form>
+
+                <ul class="list-group mb-0" id="todo-list" />
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js" ></script>
+    <script type="text/javascript" src="../js/client.js" ></script>
+
+  </body>
+</html>
