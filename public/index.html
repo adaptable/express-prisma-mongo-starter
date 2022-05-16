@@ -12,62 +12,69 @@
       <div style="background-color: rgb(4 0 255 / 6%); padding: 15px; border-radius: 10px; margin-top: 10px;">
         <div class="row">
           <div class="col col-12 col-md-2 text-center d-inline">
-            <img src="https://adaptable.io/img/party-popper.svg" style="max-width: 200px;" />
+            <img src="https://adaptable.io/img/party-popper.svg" style="max-width: 150px;" />
           </div>
           <div class="col col-12 col-md-8 text-center">
-            <h2 class="display-3 mt-3">Congratulations!</h2>
+            <h2 class="display-4 mt-3">Congratulations!</h2>
             <p style="font-size: 1.5rem">
               Your app is now running on
             </p>
             <img src="https://adaptable.io/img/color lockup.svg" style="max-width: 200px;" />
           </div>
           <div class="col col-md-2 text-center d-none d-md-block">
-            <img src="https://adaptable.io/img/party-popper.svg" style="max-width: 200px;" />
+            <img src="https://adaptable.io/img/party-popper.svg" style="max-width: 150px;" />
           </div>
         </div>
 
-        <h2 class="display-4 text-center mt-5">What's Next?</h2>
+        <h2 class="display-5 text-center mt-5">What's Next?</h2>
 
         <p class="text-center mb-4">
           Here are a few ideas on what to do with your new app.
         </p>
 
-        <div class="row d-flex">
-
-          <div class="col col-12 col-md-6 col-lg-4">
-            <h4 class="fw-bold mb-3">
-              1. Check out your new app
-            </h4>
-            <p>
-              Add tasks to your To Do List <a href="#todo">below</a>.
-              They're saved to your new MongoDB instance via your REST API based
-              on <a href="https://expressjs.com" target="_blank">Express</a> and
-              <a href="https://prisma.io" target="_blank">Prisma</a>.
-            </p>
+        <div class="accordion" id="ideasAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Idea #1: Check out your new app
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#ideasAccordion">
+              <div class="accordion-body">
+                Add tasks to your To Do List <a href="#todo">below</a>.
+                They're saved to your new MongoDB instance via your REST API based
+                on <a href="https://expressjs.com" target="_blank">Express</a> and
+                <a href="https://prisma.io" target="_blank">Prisma</a>.
+              </div>
+            </div>
           </div>
-
-          <div class="col col-12 col-md-6 col-lg-4">
-            <h4 class="fw-bold mb-3">
-              2. Remove this message
-            </h4>
-            <p>
-              Clone your new repo and edit the app source code to remove this message.
-              Push your changes to GitHub and Adaptable will automatically re-deploy to the cloud.
-            </p>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button fs-4 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Idea #2: Remove this message
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#ideasAccordion">
+              <div class="accordion-body">
+                Clone your new repo and edit the app source code to remove this message.
+                Push your changes to GitHub and <strong>Adaptable will automatically re-deploy to the cloud</strong>.
+              </div>
+            </div>
           </div>
-
-          <div class="col col-12 col-md-6 col-lg-4">
-            <h4 class="fw-bold mb-3">
-              3. Add more API services
-            </h4>
-            <p>
-              Add more MongoDB-backed REST API endpoints to your app.
-              Take a look at the
-              <a target="_blank" href="https://www.prisma.io/docs/concepts/overview/prisma-in-your-stack/rest">Prisma Documentation</a>
-              to get started.
-            </p>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button fs-4 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Idea #3: Add more API services
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#ideasAccordion">
+              <div class="accordion-body">
+                For step-by-step instructions on adding a new REST API method
+                to delete items from the To Do List, see the
+                <a href="https://adaptable.io/docs/starters/feathers-chat-starter#what-s-next" target="_blank">Starter Guide</a>.
+              </div>
+            </div>
           </div>
-
         </div>
 
         <div class="row mt-4">
@@ -81,6 +88,7 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- REMOVE MESSAGE END -->
 
