@@ -2,6 +2,7 @@
   "name": "express-prisma-mongo-starter",
   "version": "0.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "prisma db push && nodemon ./src/index",
     "start": "prisma db push && node ./src/index",
