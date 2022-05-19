@@ -10,7 +10,7 @@ The app uses [Express.js](https://expressjs.com) as the foundation for serving b
 ## Using this Starter Template
 
 This repo can be used as an [Adaptable.io](https://adaptable.io) Starter.
-For instructions on using this repo as a template and deploying to the Adaptable Cloud in just a few clicks, check out the [Starter Guide](https://adaptable.io/docs/starters/express-prisma-mongo).
+For instructions on using this repo as a template and deploying to the Adaptable Cloud in just a few clicks, check out the [Starter Guide](https://adaptable.io/docs/starters/express-prisma-mongo-starter).
 
 ## Running a local dev environment
 
