@@ -1,4 +1,23 @@
+const apiFetch = async (url, method, body) => {
+    method = method || "GET";
+    const opts = { method };
+    if (body) {
+        opts.headers = {
+            "Content-Type": "application/json",
+        };
+        opts.body = JSON.stringify(body);
+    }
+
+    const resp = await fetch(url, opts);
+    if (!resp.ok) {
+        const text = await resp.text();
+        throw new Error(`Error from API: ${resp.statusText}: ${text}`);
+    }
+    return resp;
+};
+
 const initTodo = () => {
+    // INSERT handleTodoDelete HERE
 
     const renderTitle = ({ title, done }) => {
         if (!done) return title;
@@ -13,7 +32,10 @@ const initTodo = () => {
                 ${done ? "checked" : ""}
                 onchange="handleTodoChange(event, '${id}')"
             />
-            ${renderTitle({ title, done })}
+            <div style="flex-grow: 1;">
+                ${renderTitle({ title, done })}
+            </div>
+            <!-- INSERT DELETE BUTTON HERE -->
         </li>
     `;
     const noItems = `
@@ -26,7 +48,7 @@ const initTodo = () => {
         const doRefresh = async () => {
             const list = document.querySelector("#todo-list");
 
-            const resp = await fetch("/todos");
+            const resp = await apiFetch("/todos");
             const todos = await resp.json();
             if (todos.length === 0) {
                 list.innerHTML = noItems;
@@ -43,20 +65,7 @@ const initTodo = () => {
         const title = input.value;
         if (!title) return;
 
-        const resp = await fetch("/todos", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                title,
-                done: false,
-            }),
-        });
-        if (!resp.ok) {
-            const text = await resp.text();
-            throw new Error(`${resp.statusText}: ${text}`);
-        }
+        await apiFetch("/todos", "POST", { title, done: false });
 
         input.value = "";
         refreshList();
@@ -64,19 +73,7 @@ const initTodo = () => {
 
     const handleTodoChange = (ev, id) => {
         const doChange = async () => {
-            const resp = await fetch(`/todos/${id}`, {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    done: ev.target.checked,
-                }),
-            });
-            if (!resp.ok) {
-                const text = await resp.text();
-                throw new Error(`${resp.statusText}: ${text}`);
-            }
+            await apiFetch(`/todos/${id}`, "PATCH", { done: ev.target.checked });
 
             refreshList();
         }
