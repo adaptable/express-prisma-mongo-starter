@@ -3,6 +3,7 @@
  */
 
 const { PrismaClient, PrismaClientKnownRequestError } = require('@prisma/client');
+const sanitizeHtml = require('sanitize-html');
 const express = require('express');
 const router = express.Router();
 
@@ -31,7 +32,13 @@ const asyncMiddleware = fn => (req, res, next) => {
 };
 
 router.post("/", asyncMiddleware(async (req, res) => {
-  const { title, done } = req.body;
+  const { title: titleIn, done } = req.body;
+  const title = sanitizeHtml(titleIn, {
+    allowedTags: [ 'a' ],
+    allowedAttributes: {
+      'a': [ 'href' ]
+    },
+  });
 
   const result = await prisma.TodoItem.create({
     data: {
